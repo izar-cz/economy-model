@@ -1,0 +1,36 @@
+body {
+	margin: 0;
+}
+.boxes {
+	display: flex;
+}
+.box {
+	border: 2px solid black;
+	flex: 1;
+}
+.box#market .tick { font-size: 10px; }
+.box#stock .tick { font-size: 1px; }
+
+.button { text-decoration: underline; cursor: pointer; color: blue; }
+[type="checkbox"] { display: none; }
+#btn_relativeBars:checked ~ * .box#market .tick { font-size: 0.3vw; }
+#btn_relativeBars:checked ~ * .box#stock .tick { font-size: 0.0006vw; }
+[for=btn_relativeBars]::before { display: inline; content: "relative" }
+#btn_relativeBars:checked ~ [for=btn_relativeBars]::before { content: "absolute" }
+.tick {
+	display: flex;
+}
+.mark {
+	height: 5px;
+}
+.c-water { background-color: #3399ff; order: 7; }
+.c-grain { background-color: #cccc00; }
+.c-food  { background-color: #ff6600; }
+.c-booze { background-color: #00ccff; order: 8; }
+.c-goods { background-color: #cc00ff; }
+
+.j-field { background-color: #cccc00; }
+.j-bakery  { background-color: #ff6600; }
+.j-still { background-color: #00ccff; }
+.j-workshop { background-color: #cc00ff; order: -1; }
+
